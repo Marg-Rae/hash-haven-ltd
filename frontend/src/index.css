@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,7 +11,7 @@
   }
   
   body {
-    @apply bg-gradient-to-br from-earth-50 via-white to-sage-50;
+    @apply bg-gradient-to-br from-sage-50 via-earth-50 to-earth-100;
     @apply text-earth-900;
     @apply font-sans;
     @apply antialiased;
@@ -24,7 +26,7 @@
 /* Custom Components */
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 bg-gradient-to-r from-terracotta-500 to-terracotta-600;
+    @apply px-6 py-3 bg-gradient-to-r from-sage-600 via-earth-600 to-sage-700;
     @apply text-white font-medium rounded-xl;
     @apply shadow-lg hover:shadow-xl;
     @apply transition-all duration-300;
@@ -32,7 +34,7 @@
   }
   
   .btn-secondary {
-    @apply px-6 py-3 bg-gradient-to-r from-sage-600 to-sage-700;
+    @apply px-6 py-3 bg-gradient-to-r from-earth-600 to-sage-600;
     @apply text-white font-medium rounded-xl;
     @apply shadow-lg hover:shadow-xl;
     @apply transition-all duration-300;
@@ -63,7 +65,7 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-terracotta-600 via-earth-600 to-sage-700;
+    @apply bg-gradient-to-r from-sage-700 via-earth-600 to-sage-500;
     @apply bg-clip-text text-transparent;
   }
   
@@ -111,7 +113,24 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9a7549;
+  background: #687959;
+}
+
+/* Leaflet map refinements */
+.leaflet-container {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.land-popup .leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(88, 66, 47, 0.18);
+  border: 1px solid #e7dac7;
+}
+
+.land-popup .leaflet-popup-tip {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e7dac7;
 }
 
 /* Loading Animation */

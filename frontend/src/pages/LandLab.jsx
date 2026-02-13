@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { 
   FaMapMarkedAlt, FaSeedling, FaTint, FaMountain, 
   FaChartLine, FaGlobe, FaLeaf 
 } from 'react-icons/fa';
 import { projectsAPI } from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
+
+const LandMap = lazy(() => import('../components/LandMap'));
 
 const LandLab = () => {
   const [projects, setProjects] = useState([]);
@@ -149,38 +151,36 @@ const LandLab = () => {
               GIS Mapping & Analysis
             </h2>
             <p className="text-lg text-earth-600 max-w-2xl mx-auto">
-              Using geographic information systems to visualize, analyze, and optimize land use.
+              A land-intelligence map for visualizing field data, boundaries, and active projects.
             </p>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            transition={{ delay: 0.2 }}
-            className="card p-8 max-w-4xl mx-auto"
-          >
-            <div className="aspect-video bg-gradient-to-br from-sage-200 to-earth-200 rounded-xl flex flex-col items-center justify-center">
-              <FaMapMarkedAlt className="text-6xl text-sage-600 mb-4" />
-              <p className="text-earth-700 font-medium">Interactive Map Visualization</p>
-              <p className="text-earth-600 text-sm mt-2">Leaflet integration coming soon</p>
-            </div>
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-              <div>
+          <div className="card p-6 md:p-8">
+            <Suspense
+              fallback={
+                <div className="min-h-[500px] flex items-center justify-center">
+                  <LoadingSpinner message="Loading mapping layers..." />
+                </div>
+              }
+            >
+              <LandMap category="Land Lab" />
+            </Suspense>
+
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+              <div className="rounded-2xl bg-earth-50 p-4 border border-earth-100">
                 <p className="text-2xl font-bold text-sage-700">Topography</p>
                 <p className="text-earth-600 text-sm">Elevation analysis</p>
               </div>
-              <div>
+              <div className="rounded-2xl bg-earth-50 p-4 border border-earth-100">
                 <p className="text-2xl font-bold text-sage-700">Hydrology</p>
                 <p className="text-earth-600 text-sm">Water flow patterns</p>
               </div>
-              <div>
+              <div className="rounded-2xl bg-earth-50 p-4 border border-earth-100">
                 <p className="text-2xl font-bold text-sage-700">Land Use</p>
                 <p className="text-earth-600 text-sm">Zone planning</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

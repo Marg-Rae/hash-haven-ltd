@@ -10,7 +10,7 @@ Modern, elegant React application for HashHaven Ltd - Building Systems for Land,
 - **Routing**: React Router v6
 - **HTTP Client**: Axios
 - **Icons**: React Icons
-- **Maps**: Leaflet & React Leaflet
+- **Maps**: Leaflet (styles ready, map integration planned)
 
 ## Getting Started
 
@@ -72,7 +72,7 @@ src/
 │   └── Contact.jsx
 ├── services/        # API services
 │   └── api.js
-├── App.jsx          # Main app component
+├── App.js           # Main app component
 ├── main.jsx         # Entry point
 └── index.css        # Global styles
 ```
@@ -102,10 +102,10 @@ The `netlify.toml` file is already configured for proper routing.
 
 ## Color Palette
 
-- **Earth Tones**: Warm, grounding colors
-- **Sage**: Natural, calming greens
-- **Terracotta**: Energetic, warm accents
-- **Sky**: Cool, professional blues
+- **Ocean**: Crisp, confident blues
+- **Citrus**: Bright, energetic accents
+- **Orchid**: Vivid, modern highlights
+- **Terracotta**: Warm, grounding balance
 
 ## Browser Support
 

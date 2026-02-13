@@ -51,7 +51,7 @@ hash-haven-ltd/
 │   │   ├── components/ # Reusable components
 │   │   ├── pages/      # Page components
 │   │   ├── services/   # API services
-│   │   └── App.jsx
+│   │   └── App.js
 │   ├── public/
 │   └── package.json
 └── README.md
@@ -125,19 +125,19 @@ Frontend will run on `http://localhost:5173`
 
 ## 🎨 Design Philosophy
 
-- **Elegant & Grounded**: Earth-toned color palette
+- **Vibrant & Grounded**: Nature-based tones with bright accents
 - **Modern & Clean**: Smooth animations and generous spacing
 - **Professional**: Investor-friendly but not corporate
-- **Feminine Power**: Balanced strength and grace
+- **Bold Typography**: Expressive pairing for brand voice
 - **Responsive**: Mobile-first design approach
 
 ## Color Palette
 
 ```css
-Earth Tones: #b08d5d, #9a7549, #7f5e3e
-Sage Green: #687959, #526145, #424e38
+Ocean: #2f8ab6, #21719a, #1c5b7d
+Citrus: #ffb81f, #f59e0b, #d98206
+Orchid: #f13a8a, #d2256f, #ae1b59
 Terracotta: #d0764f, #bc5d33, #9f4927
-Sky Blue: #5088a3, #416d89, #375970
 ```
 
 ## 📦 Deployment
