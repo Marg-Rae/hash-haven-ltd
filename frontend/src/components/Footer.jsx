@@ -1,5 +1,14 @@
 import { Link } from 'react-router-dom';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import {
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaPinterest,
+  FaTiktok,
+  FaWhatsapp,
+  FaXTwitter,
+} from 'react-icons/fa6';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,10 +26,54 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: FaGithub, url: 'https://github.com', label: 'GitHub' },
-    { icon: FaLinkedin, url: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FaTwitter, url: 'https://twitter.com', label: 'Twitter' },
-    { icon: FaEnvelope, url: '/contact', label: 'Email' },
+    {
+      icon: FaGithub,
+      url: 'https://github.com/Marg-Rae',
+      label: 'GitHub',
+      hoverClass: 'hover:text-white',
+    },
+    {
+      icon: FaWhatsapp,
+      url: 'https://wa.me/qr/MOAEG7L2JKPPP1',
+      label: 'WhatsApp',
+      hoverClass: 'hover:text-[#25D366]',
+    },
+    {
+      icon: FaInstagram,
+      url: 'https://www.instagram.com/chepkoech_9?igsh=NnAyeTBrejRkM2lm',
+      label: 'Instagram',
+      hoverClass: 'hover:text-[#E4405F]',
+    },
+    {
+      icon: FaFacebook,
+      url: 'https://www.facebook.com/share/17DaR1LLWm/',
+      label: 'Facebook',
+      hoverClass: 'hover:text-[#1877F2]',
+    },
+    {
+      icon: FaTiktok,
+      url: 'http://tiktok.com/@chepkoech_9',
+      label: 'TikTok',
+      hoverClass: 'hover:text-[#EE1D52]',
+    },
+    {
+      icon: FaXTwitter,
+      url: 'https://x.com/hash_haven009',
+      label: 'X',
+      hoverClass: 'hover:text-white',
+    },
+    {
+      icon: FaPinterest,
+      url: 'https://pin.it/34OnHZZn9',
+      label: 'Pinterest',
+      hoverClass: 'hover:text-[#E60023]',
+    },
+    {
+      icon: FaLinkedin,
+      url: 'http://www.linkedin.com/in/chepkoech-ketter-083b79354',
+      label: 'LinkedIn',
+      hoverClass: 'hover:text-[#0A66C2]',
+    },
   ];
 
   return (
@@ -45,7 +98,7 @@ const Footer = () => {
                   href={social.url}
                   target={social.url.startsWith('http') ? '_blank' : '_self'}
                   rel="noopener noreferrer"
-                  className="text-earth-300 hover:text-terracotta-400 transition-colors duration-300"
+                  className={`text-earth-300 transition-all duration-300 hover:-translate-y-1 ${social.hoverClass}`}
                   aria-label={social.label}
                 >
                   <social.icon size={24} />

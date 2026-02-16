@@ -6,6 +6,7 @@ import {
 } from 'react-icons/fa';
 import { projectsAPI } from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
+import eurobridgeLogo from '../assets/eurobridge-logo.jpg';
 
 const DigitalForge = () => {
   const [projects, setProjects] = useState([]);
@@ -40,9 +41,35 @@ const DigitalForge = () => {
 
   const categories = ['all', 'Web Apps', 'Data Tools', 'APIs', 'GIS'];
 
+  const portfolioSpotlight = [
+    {
+      _id: 'eurobridge-language-institute',
+      title: 'Eurobridge Language Institute',
+      status: 'Ongoing',
+      featured: true,
+      description:
+        'A bilingual-ready language institute website serving online learners and in-person students in Eldoret, Kenya. Designed to guide inquiries to enrollment while highlighting certification pathways and job outcomes.',
+      technologies: ['Web Apps', 'APIs'],
+      liveUrl: 'https://eurobridgelanguageinstitue.com',
+      logo: eurobridgeLogo,
+      services: [
+        'Brand-focused web presence and admissions flow',
+        'Program catalog structure for multiple languages',
+        'Inquiry-to-enrollment prompts and contact pathways',
+      ],
+      outcomes: [
+        'Showcases certificate credibility and career readiness',
+        'Supports local and international student outreach',
+        'Improves clarity for course selection and enrollment',
+      ],
+    },
+  ];
+
+  const allProjects = [...portfolioSpotlight, ...projects];
+
   const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(p => p.technologies?.includes(filter));
+    ? allProjects 
+    : allProjects.filter(p => p.technologies?.includes(filter));
 
   return (
     <div className="pt-20">
@@ -148,7 +175,7 @@ const DigitalForge = () => {
             </div>
           </motion.div>
 
-          {loading ? (
+          {loading && projects.length === 0 && portfolioSpotlight.length === 0 ? (
             <LoadingSpinner message="Loading projects..." />
           ) : filteredProjects.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -162,10 +189,20 @@ const DigitalForge = () => {
                   transition={{ delay: index * 0.1 }}
                   className="card p-6 flex flex-col h-full"
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
-                      {project.status}
-                    </span>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      {project.logo && (
+                        <img
+                          src={project.logo}
+                          alt={`${project.title} logo`}
+                          className="h-10 w-10 rounded-lg object-contain bg-white p-1 shadow-sm"
+                          loading="lazy"
+                        />
+                      )}
+                      <span className="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
+                        {project.status}
+                      </span>
+                    </div>
                     {project.featured && (
                       <span className="px-3 py-1 bg-terracotta-100 text-terracotta-700 rounded-full text-sm font-semibold">
                         Featured
@@ -180,6 +217,34 @@ const DigitalForge = () => {
                   <p className="text-earth-600 mb-4 flex-grow">
                     {project.description}
                   </p>
+
+                  {project.services && project.services.length > 0 && (
+                    <div className="mb-4">
+                      <p className="text-sm font-semibold text-earth-800 mb-2">Services</p>
+                      <ul className="space-y-2 text-sm text-earth-600">
+                        {project.services.map((service, i) => (
+                          <li key={`${project._id}-service-${i}`} className="flex items-start">
+                            <span className="mt-2 mr-2 h-1.5 w-1.5 rounded-full bg-sky-500"></span>
+                            <span>{service}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {project.outcomes && project.outcomes.length > 0 && (
+                    <div className="mb-4">
+                      <p className="text-sm font-semibold text-earth-800 mb-2">Outcomes</p>
+                      <ul className="space-y-2 text-sm text-earth-600">
+                        {project.outcomes.map((outcome, i) => (
+                          <li key={`${project._id}-outcome-${i}`} className="flex items-start">
+                            <span className="mt-2 mr-2 h-1.5 w-1.5 rounded-full bg-terracotta-500"></span>
+                            <span>{outcome}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                   {project.technologies && project.technologies.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-4">
