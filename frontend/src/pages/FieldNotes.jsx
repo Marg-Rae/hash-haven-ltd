@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaBook, FaSearch, FaCalendar, FaTag } from 'react-icons/fa';
 import { postsAPI } from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
+import VideoHero from '../components/VideoHero';
 
 const FieldNotes = () => {
   const [posts, setPosts] = useState([]);
@@ -41,30 +42,14 @@ const FieldNotes = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-terracotta-100 to-earth-100">
-        <div className="container-custom">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-terracotta-500 to-terracotta-700 flex items-center justify-center">
-                <FaBook className="text-3xl text-white" />
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-earth-900">
-              Field Notes
-            </h1>
-            <p className="text-xl text-earth-700 leading-relaxed">
-              Insights, discoveries, and reflections from our journey building systems 
-              for land, life, and digital resilience.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Section with Video */}
+      <VideoHero
+        videoSrc="/videos/FieldNotes.mp4"
+        icon={FaBook}
+        title="Field Notes"
+        subtitle="Insights, discoveries, and reflections from our journey building systems for land, life, and digital resilience."
+        iconGradient="from-terracotta-500 to-terracotta-700"
+      />
 
       {/* Search and Filter */}
       <section className="section-padding">

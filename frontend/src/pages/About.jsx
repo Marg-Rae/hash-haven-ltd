@@ -4,6 +4,7 @@ import {
   FaLightbulb, FaSeedling, FaHandshake 
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import VideoHero from '../components/VideoHero';
 
 const About = () => {
   const fadeIn = {
@@ -57,28 +58,13 @@ const About = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-logo-green-100 via-sage-100 to-earth-100 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-logo-green-200/10 via-transparent to-earth-200/10 pointer-events-none"></div>
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-logo-brown-900">
-              About <span className="gradient-text drop-shadow-sm">HashHaven Ltd</span>
-            </h1>
-            <p className="text-xl text-earth-700 leading-relaxed">
-              We're building integrated systems for land, life, and digital resilience. 
-              A convergence of regenerative agriculture, modern homesteading, GIS mapping, 
-              digital innovation, and Mandarin language learning—rooted in curiosity and 
-              commitment to long-term thinking.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Section with Video */}
+      <VideoHero
+        videoSrc="/videos/AboutHash.mp4"
+        title="About HashHaven Ltd"
+        subtitle="We're building integrated systems for land, life, and digital resilience. A convergence of regenerative agriculture, modern homesteading, GIS mapping, digital innovation, and Mandarin language learning—rooted in curiosity and commitment to long-term thinking."
+        iconGradient="from-logo-green-500 to-logo-green-700"
+      />
 
       {/* Mission Section */}
       <section className="section-padding">

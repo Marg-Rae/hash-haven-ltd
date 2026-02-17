@@ -6,6 +6,7 @@ import {
 } from 'react-icons/fa';
 import { projectsAPI } from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
+import VideoHero from '../components/VideoHero';
 import eurobridgeLogo from '../assets/eurobridge-logo.jpg';
 
 const DigitalForge = () => {
@@ -73,31 +74,14 @@ const DigitalForge = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-sky-100 to-earth-100">
-        <div className="container-custom">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-700 flex items-center justify-center">
-                <FaCode className="text-3xl text-white" />
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-earth-900">
-              Digital Forge
-            </h1>
-            <p className="text-xl text-earth-700 leading-relaxed">
-              Crafting modern web applications and digital tools that solve real-world problems. 
-              From data visualization to full-stack platforms, we build technology that serves 
-              people and strengthens systems.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Hero Section with Video */}
+      <VideoHero
+        videoSrc="/videos/DigitalForge.mp4"
+        icon={FaCode}
+        title="Digital Forge"
+        subtitle="Crafting modern web applications and digital tools that solve real-world problems. From data visualization to full-stack platforms, we build technology that serves people and strengthens systems."
+        iconGradient="from-sky-500 to-sky-700"
+      />
 
       {/* Tech Stack */}
       <section className="section-padding">
