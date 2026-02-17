@@ -85,7 +85,7 @@ const Contact = () => {
             </h1>
             <p className="text-xl text-earth-700 leading-relaxed">
               Whether you're interested in collaboration, have a project in mind, 
-              or simply want to connect—we'd love to hear from you.
+              or simply want to connect - we'd love to hear from you.
             </p>
           </motion.div>
         </div>

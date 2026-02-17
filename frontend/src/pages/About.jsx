@@ -62,7 +62,7 @@ const About = () => {
       <VideoHero
         videoSrc="/videos/AboutHash.mp4"
         title="About HashHaven Ltd"
-        subtitle="We're building integrated systems for land, life, and digital resilience. A convergence of regenerative agriculture, modern homesteading, GIS mapping, digital innovation, and Mandarin language learning—rooted in curiosity and commitment to long-term thinking."
+        subtitle="We're building integrated systems for land, life, and digital resilience. A convergence of regenerative agriculture, modern homesteading, GIS mapping, digital innovation, and Mandarin language learning - rooted in curiosity and commitment to long-term thinking."
         iconGradient="from-logo-green-500 to-logo-green-700"
       />
 
@@ -84,7 +84,7 @@ const About = () => {
                 Our Mission
               </h2>
               <p className="text-lg text-earth-700 leading-relaxed text-center mb-6">
-                To create systems—both digital and physical—that strengthen resilience, 
+                To create systems - both digital and physical - that strengthen resilience, 
                 foster regeneration, and honor the interconnection between land, technology, 
                 and human flourishing.
               </p>
@@ -236,12 +236,12 @@ const About = () => {
             <p className="text-xl text-earth-50 leading-relaxed mb-8">
               We're interested in working with individuals and organizations who share our 
               values and vision. Whether it's land projects, digital innovation, research 
-              collaboration, or strategic partnerships—we believe in building relationships 
+              collaboration, or strategic partnerships - we believe in building relationships 
               that create lasting positive impact.
             </p>
             <p className="text-lg text-earth-100 mb-8">
               If you're thinking long-term, working on meaningful problems, and value 
-              integrity and depth over speed and surface—let's talk.
+              integrity and depth over speed and surface - let's talk.
             </p>
             <Link
               to="/contact"
