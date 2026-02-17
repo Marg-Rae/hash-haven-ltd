@@ -50,7 +50,7 @@ const DigitalForge = () => {
       description:
         'A bilingual-ready language institute website serving online learners and in-person students in Eldoret, Kenya. Designed to guide inquiries to enrollment while highlighting certification pathways and job outcomes.',
       technologies: ['Web Apps', 'APIs'],
-      liveUrl: 'https://eurobridgelanguageinstitue.com',
+      liveUrl: 'https://eurobridgelanguageinstitute.com',
       logo: eurobridgeLogo,
       services: [
         'Brand-focused web presence and admissions flow',

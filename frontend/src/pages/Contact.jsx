@@ -66,8 +66,9 @@ const Contact = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-terracotta-100 to-earth-100">
-        <div className="container-custom">
+      <section className="section-padding bg-gradient-to-br from-terracotta-100 via-earth-100 to-earth-200 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-logo-green-200/10 via-transparent to-logo-brown-200/10 pointer-events-none"></div>
+        <div className="container-custom relative z-10">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -75,11 +76,11 @@ const Contact = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-terracotta-500 to-terracotta-700 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-terracotta-600 via-earth-600 to-earth-700 flex items-center justify-center shadow-xl">
                 <FaEnvelope className="text-3xl text-white" />
               </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-earth-900">
+            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-terracotta-800 via-earth-800 to-logo-brown-800">
               Get in Touch
             </h1>
             <p className="text-xl text-earth-700 leading-relaxed">

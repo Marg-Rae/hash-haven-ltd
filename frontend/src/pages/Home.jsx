@@ -38,21 +38,21 @@ const Home = () => {
       title: 'Land Lab',
       description: 'Regenerative agriculture, geology, and GIS mapping for sustainable land management.',
       link: '/land-lab',
-      gradient: 'from-sage-500 to-sage-700'
+      gradient: 'from-logo-green-600 via-sage-600 to-logo-green-700'
     },
     {
       icon: FaCode,
       title: 'Digital Forge',
       description: 'Web applications, tech projects, and digital innovation for modern solutions.',
       link: '/digital-forge',
-      gradient: 'from-sky-500 to-sky-700'
+      gradient: 'from-earth-600 via-earth-700 to-logo-brown-700'
     },
     {
       icon: FaHome,
       title: 'Homestead Systems',
       description: 'Modern homesteading practices integrating technology and traditional wisdom.',
       link: '/about',
-      gradient: 'from-terracotta-500 to-terracotta-700'
+      gradient: 'from-terracotta-600 via-earth-600 to-earth-700'
     }
   ];
 
@@ -83,10 +83,12 @@ const Home = () => {
         >
           <motion.h1
             variants={fadeIn}
-            className="text-5xl md:text-7xl font-serif font-bold mb-6 text-white"
+            className="text-5xl md:text-7xl font-serif font-bold mb-6 text-white drop-shadow-2xl"
           >
             Building Systems for{' '}
-            <span className="text-emerald-300">Land, Life & Digital Resilience</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-logo-green-200 via-sage-200 to-earth-200 drop-shadow-lg">
+              Land, Life & Digital Resilience
+            </span>
           </motion.h1>
           
           <motion.p
@@ -115,7 +117,7 @@ const Home = () => {
       </section>
 
       {/* What We're Building Section */}
-      <section className="section-padding bg-white/50">
+      <section className="section-padding bg-gradient-to-br from-white/60 via-logo-green-50/30 to-earth-50/30 backdrop-blur-sm">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -124,10 +126,10 @@ const Home = () => {
             variants={fadeIn}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-earth-900">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-logo-green-900 via-logo-brown-800 to-earth-800">
               What We're Building
             </h2>
-            <p className="text-lg text-earth-600 max-w-2xl mx-auto">
+            <p className="text-lg text-logo-brown-800 max-w-2xl mx-auto font-medium">
               A convergence of land stewardship, digital innovation, and sustainable living systems.
             </p>
           </motion.div>
@@ -172,10 +174,10 @@ const Home = () => {
               variants={fadeIn}
             >
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sage-500 to-sage-700 flex items-center justify-center mr-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-logo-green-600 via-sage-600 to-logo-green-700 flex items-center justify-center mr-4 shadow-lg">
                   <FaMapMarkedAlt className="text-2xl text-white" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-earth-900">
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-logo-green-800 to-sage-700">
                   Land Lab
                 </h2>
               </div>
@@ -186,8 +188,8 @@ const Home = () => {
               </p>
               <ul className="space-y-3 mb-8">
                 {['Soil & Water Research', 'GIS Mapping & Analysis', 'Regenerative Agriculture', 'Geological Studies'].map((item) => (
-                  <li key={item} className="flex items-center text-earth-600">
-                    <FaSeedling className="text-sage-600 mr-3" />
+                  <li key={item} className="flex items-center text-earth-700 font-medium">
+                    <FaSeedling className="text-logo-green-700 mr-3" />
                     {item}
                   </li>
                 ))}
@@ -204,9 +206,9 @@ const Home = () => {
               viewport={{ once: true }}
               variants={fadeIn}
               transition={{ delay: 0.2 }}
-              className="card p-8 bg-gradient-to-br from-sage-50 to-earth-50"
+              className="card p-8 bg-gradient-to-br from-logo-green-50 via-sage-50 to-earth-50 shadow-xl border-2 border-logo-green-100"
             >
-              <div className="aspect-video bg-gradient-to-br from-sage-200 to-earth-200 rounded-xl overflow-hidden">
+              <div className="aspect-video bg-gradient-to-br from-logo-green-100 via-sage-100 to-earth-100 rounded-xl overflow-hidden shadow-lg">
                 <img 
                   src={landlabImage} 
                   alt="Land Lab - Regenerative Agriculture" 
@@ -219,7 +221,7 @@ const Home = () => {
       </section>
 
       {/* Digital Forge Preview */}
-      <section className="section-padding bg-white/50">
+      <section className="section-padding bg-gradient-to-br from-earth-50/40 via-earth-100/40 to-logo-brown-50/40">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -229,8 +231,8 @@ const Home = () => {
               variants={fadeIn}
               className="order-2 lg:order-1"
             >
-              <div className="card p-8 bg-gradient-to-br from-sky-50 to-earth-50">
-                <div className="aspect-video bg-gradient-to-br from-sky-200 to-earth-200 rounded-xl overflow-hidden">
+              <div className="card p-8 bg-gradient-to-br from-earth-50 via-earth-100 to-logo-brown-50 shadow-xl border-2 border-earth-200">
+                <div className="aspect-video bg-gradient-to-br from-earth-200 via-earth-300 to-logo-brown-200 rounded-xl overflow-hidden shadow-lg">
                   <img 
                     src={homesteadImage} 
                     alt="Digital Forge - Web Applications" 
@@ -249,10 +251,10 @@ const Home = () => {
               className="order-1 lg:order-2"
             >
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-sky-700 flex items-center justify-center mr-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-earth-600 via-earth-700 to-logo-brown-700 flex items-center justify-center mr-4 shadow-lg">
                   <FaCode className="text-2xl text-white" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-earth-900">
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-earth-800 via-logo-brown-800 to-logo-brown-900">
                   Digital Forge
                 </h2>
               </div>
@@ -263,8 +265,8 @@ const Home = () => {
               </p>
               <ul className="space-y-3 mb-8">
                 {['Full-Stack Web Development', 'Data Visualization', 'API Development', 'Digital Innovation'].map((item) => (
-                  <li key={item} className="flex items-center text-earth-600">
-                    <FaFlask className="text-sky-600 mr-3" />
+                  <li key={item} className="flex items-center text-earth-700 font-medium">
+                    <FaFlask className="text-earth-700 mr-3" />
                     {item}
                   </li>
                 ))}
@@ -289,10 +291,10 @@ const Home = () => {
               variants={fadeIn}
             >
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-terracotta-500 to-terracotta-700 flex items-center justify-center mr-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-terracotta-600 via-earth-600 to-earth-700 flex items-center justify-center mr-4 shadow-lg">
                   <FaHome className="text-2xl text-white" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-earth-900">
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-terracotta-800 via-earth-800 to-earth-900">
                   Homestead Systems
                 </h2>
               </div>
@@ -303,8 +305,8 @@ const Home = () => {
               </p>
               <ul className="space-y-3 mb-8">
                 {['Sustainable Food Systems', 'Water & Energy Management', 'Off-Grid Solutions', 'Community Resilience'].map((item) => (
-                  <li key={item} className="flex items-center text-earth-600">
-                    <FaHome className="text-terracotta-600 mr-3" />
+                  <li key={item} className="flex items-center text-earth-700 font-medium">
+                    <FaHome className="text-terracotta-700 mr-3" />
                     {item}
                   </li>
                 ))}
@@ -321,9 +323,9 @@ const Home = () => {
               viewport={{ once: true }}
               variants={fadeIn}
               transition={{ delay: 0.2 }}
-              className="card p-8 bg-gradient-to-br from-terracotta-50 to-earth-50"
+              className="card p-8 bg-gradient-to-br from-terracotta-50 via-earth-50 to-earth-100 shadow-xl border-2 border-terracotta-100"
             >
-              <div className="aspect-video bg-gradient-to-br from-terracotta-200 to-earth-200 rounded-xl overflow-hidden">
+              <div className="aspect-video bg-gradient-to-br from-terracotta-200 via-earth-200 to-earth-300 rounded-xl overflow-hidden shadow-lg">
                 <img 
                   src={homesteadAltImage} 
                   alt="Homestead Systems - Sustainable Living" 
@@ -346,7 +348,7 @@ const Home = () => {
               variants={fadeIn}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-earth-900">
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-logo-green-800 via-sage-700 to-earth-700">
                 Field Notes
               </h2>
               <p className="text-lg text-earth-600 max-w-2xl mx-auto">
@@ -366,7 +368,7 @@ const Home = () => {
                 >
                   <Link to={`/field-notes/${post.slug}`} className="block">
                     <div className="card p-6 h-full hover:shadow-2xl transition-all duration-300">
-                      <div className="text-sm text-terracotta-600 font-semibold mb-2">
+                      <div className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-logo-green-700 to-sage-700 font-bold mb-2">
                         {post.category}
                       </div>
                       <h3 className="text-xl font-serif font-bold mb-3 text-earth-900 line-clamp-2">
@@ -399,8 +401,10 @@ const Home = () => {
       )}
 
       {/* Call to Action */}
-      <section className="section-padding bg-gradient-to-br from-sage-700 via-earth-700 to-terracotta-700 text-white">
-        <div className="container-custom text-center">
+      <section className="section-padding bg-gradient-to-br from-logo-green-800 via-logo-brown-800 to-earth-800 text-white relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 bg-gradient-to-r from-logo-green-700/20 via-transparent to-logo-brown-700/20 pointer-events-none"></div>
+        <div className="container-custom text-center relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"

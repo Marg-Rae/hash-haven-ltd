@@ -78,7 +78,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-earth-800 via-earth-900 to-sage-900 text-earth-50">
+    <footer className="bg-gradient-to-br from-logo-green-900 via-logo-brown-900 to-earth-900 text-white relative overflow-hidden">
+      {/* Decorative gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-logo-green-800/20 via-transparent to-logo-brown-800/20 pointer-events-none"></div>
+      <div className="relative z-10">
       <div className="container-custom section-padding">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -90,7 +93,7 @@ const Footer = () => {
                 HaSh Haven Ltd
               </h3>
             </div>
-            <p className="text-earth-200 mb-4 max-w-md">
+            <p className="text-white/80 mb-4 max-w-md font-medium">
               Building Systems for Land, Life & Digital Resilience. 
               Regenerative land systems, modern homesteading, and digital innovation.
             </p>
@@ -102,7 +105,7 @@ const Footer = () => {
                   href={social.url}
                   target={social.url.startsWith('http') ? '_blank' : '_self'}
                   rel="noopener noreferrer"
-                  className={`text-earth-300 transition-all duration-300 hover:-translate-y-1 ${social.hoverClass}`}
+                  className={`text-white/80 transition-all duration-300 hover:-translate-y-1 hover:scale-110 ${social.hoverClass}`}
                   aria-label={social.label}
                 >
                   <social.icon size={24} />
@@ -113,13 +116,13 @@ const Footer = () => {
 
           {/* Explore Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Explore</h4>
+            <h4 className="text-lg font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-logo-green-300 to-sage-300">Explore</h4>
             <ul className="space-y-2">
               {footerLinks.explore.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-earth-300 hover:text-terracotta-400 transition-colors duration-300"
+                    className="text-white/70 hover:text-logo-green-300 transition-colors duration-300 font-medium"
                   >
                     {link.label}
                   </Link>
@@ -130,13 +133,13 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Company</h4>
+            <h4 className="text-lg font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-earth-300 to-earth-400">Company</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-earth-300 hover:text-terracotta-400 transition-colors duration-300"
+                    className="text-white/70 hover:text-earth-300 transition-colors duration-300 font-medium"
                   >
                     {link.label}
                   </Link>
@@ -147,17 +150,18 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-earth-700">
+        <div className="pt-8 border-t border-logo-green-700/30">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-earth-300 text-sm">
+            <p className="text-logo-green-100 text-sm font-medium">
               © {currentYear} HashHaven Ltd. All rights reserved.
             </p>
-            <p className="text-earth-400 text-sm">
+            <p className="text-earth-200 text-sm font-medium">
               Built with passion for sustainable systems
             </p>
           </div>
         </div>
       </div>
+    </div>
     </footer>
   );
 };

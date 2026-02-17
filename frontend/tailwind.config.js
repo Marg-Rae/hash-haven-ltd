@@ -7,6 +7,31 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Logo-inspired colors - Dark Brown (#3d1700) and Dark Green (#17320b)
+        'logo-brown': {
+          50: '#fef7f3',
+          100: '#fce9de',
+          200: '#f8cfbb',
+          300: '#f1a985',
+          400: '#e87d4d',
+          500: '#d95a24',
+          600: '#b0421a',
+          700: '#8f3418',
+          800: '#742c19',
+          900: '#3d1700', // Logo dark brown
+        },
+        'logo-green': {
+          50: '#f4f9f4',
+          100: '#e4f1e5',
+          200: '#cae3cd',
+          300: '#9fcda3',
+          400: '#6db074',
+          500: '#4a9452',
+          600: '#36773d',
+          700: '#2d5f32',
+          800: '#264c2a',
+          900: '#17320b', // Logo dark green
+        },
         // Earth tones with modern sophistication
         earth: {
           50: '#faf8f5',
@@ -94,8 +119,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-        serif: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['Comfortaa', 'system-ui', 'sans-serif'],
+        serif: ['Comfortaa', 'Georgia', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',

@@ -39,35 +39,36 @@ const About = () => {
       icon: FaLeaf,
       title: 'Land Stewardship',
       description: 'We study and implement regenerative land management practices, from soil biology to water systems, GIS mapping to geological research. Our approach integrates traditional wisdom with modern scientific understanding.',
-      gradient: 'from-sage-500 to-sage-700'
+      gradient: 'from-logo-green-600 via-sage-600 to-logo-green-700'
     },
     {
       icon: FaCode,
       title: 'Digital Innovation',
       description: 'We build web applications, data tools, and digital platforms that serve people and strengthen systems. Technology should be human-centered, purposeful, and accessible.',
-      gradient: 'from-sky-500 to-sky-700'
+      gradient: 'from-earth-600 via-earth-700 to-logo-brown-700'
     },
     {
       icon: FaHome,
       title: 'Homestead Systems',
       description: 'We explore modern homesteading as a practice of self-reliance, resilience, and connection to land. This includes food production, energy systems, and sustainable living infrastructure.',
-      gradient: 'from-terracotta-500 to-terracotta-700'
+      gradient: 'from-terracotta-600 via-earth-600 to-earth-700'
     }
   ];
 
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-earth-100 to-sage-100">
-        <div className="container-custom">
+      <section className="section-padding bg-gradient-to-br from-logo-green-100 via-sage-100 to-earth-100 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-logo-green-200/10 via-transparent to-earth-200/10 pointer-events-none"></div>
+        <div className="container-custom relative z-10">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-earth-900">
-              About <span className="gradient-text">HashHaven Ltd</span>
+            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-logo-brown-900">
+              About <span className="gradient-text drop-shadow-sm">HashHaven Ltd</span>
             </h1>
             <p className="text-xl text-earth-700 leading-relaxed">
               We're building integrated systems for land, life, and digital resilience. 
