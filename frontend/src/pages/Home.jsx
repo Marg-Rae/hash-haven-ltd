@@ -6,6 +6,11 @@ import {
 } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import { postsAPI } from '../services/api';
+import heroVideoUrl from '../assets/herovideo.mp4';
+import landlabImage from '../assets/landlab.jpg';
+import digitalforgeImage from '../assets/digitalforge.jpg';
+import homesteadImage from '../assets/homesteadsystems.jpg';
+import homesteadAltImage from '../assets/homestead-alt.jpg';
 
 const Home = () => {
   const [featuredPosts, setFeaturedPosts] = useState([]);
@@ -53,9 +58,21 @@ const Home = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
+      {/* Hero Section with Video Background */}
       <section className="section-padding min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-sage-100/30 via-transparent to-terracotta-100/30 pointer-events-none"></div>
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={heroVideoUrl} type="video/mp4" />
+        </video>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
         
         <motion.div
           initial="hidden"
@@ -66,16 +83,16 @@ const Home = () => {
         >
           <motion.h1
             variants={fadeIn}
-            className="text-5xl md:text-7xl font-serif font-bold mb-6 text-earth-900"
+            className="text-5xl md:text-7xl font-serif font-bold mb-6 text-white"
           >
             Building Systems for{' '}
-            <span className="gradient-text">Land, Life & Digital Resilience</span>
+            <span className="text-emerald-300">Land, Life & Digital Resilience</span>
           </motion.h1>
           
           <motion.p
             variants={fadeIn}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-earth-700 mb-8 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto"
           >
             Integrating regenerative land systems, modern homesteading, 
             and digital innovation for a sustainable future.
@@ -189,12 +206,13 @@ const Home = () => {
               transition={{ delay: 0.2 }}
               className="card p-8 bg-gradient-to-br from-sage-50 to-earth-50"
             >
-              <div className="aspect-video bg-gradient-to-br from-sage-200 to-earth-200 rounded-xl flex items-center justify-center">
-                <FaMapMarkedAlt className="text-6xl text-sage-600" />
+              <div className="aspect-video bg-gradient-to-br from-sage-200 to-earth-200 rounded-xl overflow-hidden">
+                <img 
+                  src={landlabImage} 
+                  alt="Land Lab - Regenerative Agriculture" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
-              <p className="text-center mt-4 text-earth-600 italic">
-                Interactive GIS mapping coming soon
-              </p>
             </motion.div>
           </div>
         </div>
@@ -212,12 +230,13 @@ const Home = () => {
               className="order-2 lg:order-1"
             >
               <div className="card p-8 bg-gradient-to-br from-sky-50 to-earth-50">
-                <div className="aspect-video bg-gradient-to-br from-sky-200 to-earth-200 rounded-xl flex items-center justify-center">
-                  <FaCode className="text-6xl text-sky-600" />
+                <div className="aspect-video bg-gradient-to-br from-sky-200 to-earth-200 rounded-xl overflow-hidden">
+                  <img 
+                    src={digitalforgeImage} 
+                    alt="Digital Forge - Web Applications" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <p className="text-center mt-4 text-earth-600 italic">
-                  Digital innovation & web development
-                </p>
               </div>
             </motion.div>
 
@@ -254,6 +273,63 @@ const Home = () => {
                 View Projects
                 <FaArrowRight className="inline ml-2" />
               </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Homestead Systems Preview */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeIn}
+            >
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-terracotta-500 to-terracotta-700 flex items-center justify-center mr-4">
+                  <FaHome className="text-2xl text-white" />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-earth-900">
+                  Homestead Systems
+                </h2>
+              </div>
+              <p className="text-lg text-earth-700 mb-6 leading-relaxed">
+                Integrating technology with traditional homesteading wisdom. We design 
+                systems that combine modern innovation with sustainable living practices 
+                for true self-sufficiency and resilience.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {['Sustainable Food Systems', 'Water & Energy Management', 'Off-Grid Solutions', 'Community Resilience'].map((item) => (
+                  <li key={item} className="flex items-center text-earth-600">
+                    <FaHome className="text-terracotta-600 mr-3" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link to="/about" className="btn-secondary">
+                Learn About Homesteading
+                <FaArrowRight className="inline ml-2" />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeIn}
+              transition={{ delay: 0.2 }}
+              className="card p-8 bg-gradient-to-br from-terracotta-50 to-earth-50"
+            >
+              <div className="aspect-video bg-gradient-to-br from-terracotta-200 to-earth-200 rounded-xl overflow-hidden">
+                <img 
+                  src={homesteadImage} 
+                  alt="Homestead Systems - Sustainable Living" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
