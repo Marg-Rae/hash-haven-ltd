@@ -6,6 +6,7 @@ import {
 } from 'react-icons/fa';
 import { projectsAPI } from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
+import landLabHeroVideo from '../assets/LandLabHero.mp4';
 
 const LandMap = lazy(() => import('../components/LandMap'));
 
@@ -67,28 +68,52 @@ const LandLab = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-sage-100 to-earth-100">
-        <div className="container-custom">
+      {/* Hero Section with Video Background */}
+      <section className="section-padding min-h-screen flex items-center justify-center relative overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={landLabHeroVideo} type="video/mp4" />
+        </video>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+        
+        <div className="container-custom relative z-10">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sage-500 to-sage-700 flex items-center justify-center">
+            <motion.div 
+              variants={fadeIn}
+              className="flex items-center justify-center mb-6"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-logo-green-600 to-logo-green-800 flex items-center justify-center shadow-2xl">
                 <FaLeaf className="text-3xl text-white" />
               </div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-earth-900">
+            </motion.div>
+            <motion.h1 
+              variants={fadeIn}
+              className="text-5xl md:text-6xl font-serif font-bold mb-6 text-white drop-shadow-2xl"
+            >
               Land Lab
-            </h1>
-            <p className="text-xl text-earth-700 leading-relaxed">
+            </motion.h1>
+            <motion.p 
+              variants={fadeIn}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-white/90 leading-relaxed drop-shadow-lg"
+            >
               Exploring regenerative land systems through the integration of agriculture, 
               geology, GIS technology, and ecological design. Building resilient, 
               productive landscapes that restore and enhance natural systems.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </section>
