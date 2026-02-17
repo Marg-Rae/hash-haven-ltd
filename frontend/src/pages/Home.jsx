@@ -232,7 +232,7 @@ const Home = () => {
               <div className="card p-8 bg-gradient-to-br from-sky-50 to-earth-50">
                 <div className="aspect-video bg-gradient-to-br from-sky-200 to-earth-200 rounded-xl overflow-hidden">
                   <img 
-                    src={digitalforgeImage} 
+                    src={homesteadImage} 
                     alt="Digital Forge - Web Applications" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -325,7 +325,7 @@ const Home = () => {
             >
               <div className="aspect-video bg-gradient-to-br from-terracotta-200 to-earth-200 rounded-xl overflow-hidden">
                 <img 
-                  src={homesteadImage} 
+                  src={homesteadAltImage} 
                   alt="Homestead Systems - Sustainable Living" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />

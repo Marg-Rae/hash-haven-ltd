@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import logoIcon from '../assets/HashLogoIcon.svg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,11 +45,17 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
+            <motion.img
+              whileHover={{ scale: 1.05 }}
+              src={logoIcon}
+              alt="HaSh Haven Ltd"
+              className="h-10 w-10"
+            />
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-serif font-bold gradient-text"
+              className="text-xl font-serif font-bold gradient-text hidden sm:block"
             >
-              HashHaven Ltd
+              HaSh Haven Ltd
             </motion.div>
           </Link>
 

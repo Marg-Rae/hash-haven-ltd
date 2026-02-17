@@ -9,6 +9,7 @@ import {
   FaWhatsapp,
   FaXTwitter,
 } from 'react-icons/fa6';
+import logoIcon from '../assets/HashLogoIcon.svg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -83,9 +84,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-serif font-bold mb-4 text-white">
-              HashHaven Ltd
-            </h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <img src={logoIcon} alt="HaSh Haven Ltd" className="h-12 w-12" />
+              <h3 className="text-2xl font-serif font-bold text-white">
+                HaSh Haven Ltd
+              </h3>
+            </div>
             <p className="text-earth-200 mb-4 max-w-md">
               Building Systems for Land, Life & Digital Resilience. 
               Regenerative land systems, modern homesteading, and digital innovation.
